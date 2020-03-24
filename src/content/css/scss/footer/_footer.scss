@@ -1,0 +1,25 @@
+﻿/*
+// .ekat__footer
+*/
+
+@import '../common/prefixer';
+@import '../variables';
+
+
+.ekat__footer {
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    height: $footer-height;
+    width: 100%;
+    background-color: $footer-bg;
+    border-top: $footer-border-top;
+}
+
+// Footer
+
+.footer {
+    @include flex-block();
+    @include align-items(center);
+    padding: $footer-padding;
+}

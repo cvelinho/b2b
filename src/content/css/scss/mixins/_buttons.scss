@@ -1,0 +1,82 @@
+﻿@import '../variables';
+
+
+@mixin btn-xl() {
+    font-size: 22px;
+    height: calc(58px + 2px);
+    padding: 18px 48px;
+    line-height: 1;
+    font-weight: $font-weight-medium;
+
+    &:before {
+        height: inherit;
+    }
+
+    .btn-svg-icon {
+        width: calc(20px + 2px);
+    }
+}
+
+@mixin btn-lg() {
+    font-size: 14px;
+    height: calc(38px + 2px);
+    padding: 13px 32px;
+    line-height: 1;
+    font-weight: $font-weight-semi-bold;
+
+    &:before {
+        height: inherit;
+    }
+
+    .btn-svg-icon {
+        width: calc(24px + 2px);
+    }
+}
+
+@mixin btn-md() {
+    font-size: 13px;
+    height: calc(36px + 2px);
+    line-height: 1.5;
+    padding: 6px 20px;
+    font-weight: $font-weight-medium;
+
+    &:before {
+        height: inherit;
+    }
+
+    .btn-svg-icon {
+        width: calc(24px + 2px);
+    }
+}
+
+@mixin btn-sm() {
+    font-size: 12px;
+    height: calc(30px + 2px);
+    line-height: 1.25;
+    padding: 6px 16px;
+    font-weight: $font-weight-medium;
+
+    &:before {
+        height: inherit;
+    }
+
+    .btn-svg-icon {
+        width: calc(20px + 2px);
+    }
+}
+
+@mixin btn-xs() {
+    font-size: 10px;
+    height: calc(24px + 2px);
+    line-height: 1.25;
+    padding: 4px 9px;
+    font-weight: $font-weight-medium;
+
+    &:before {
+        height: inherit;
+    }
+
+    .btn-svg-icon {
+        width: calc(18px + 2px);
+    }
+}

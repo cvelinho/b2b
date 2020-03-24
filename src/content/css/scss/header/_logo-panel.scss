@@ -1,0 +1,31 @@
+﻿/*
+// .logo-panel
+*/
+
+@import '../common/prefixer';
+@import '../variables';
+
+
+// Logo panel
+
+.logo-panel {
+
+    .logo_link {
+        text-decoration: none;
+
+        .logo_name {
+            color: $header-logo-color;
+            font-size: $header-logo-font-size;
+            line-height: $header-logo-line-height;
+            font-variant: $header-logo-font-variant;
+            font-weight: $header-logo-font-weight;
+        }
+
+        .logo_name-mode {
+            color: $header-logo-color-opposite;
+            font-size: $header-logo-font-size-sm;
+            font-weight: $header-logo-font-weight-light;
+            text-transform: $header-logo-text-transform;
+        }
+    }
+}

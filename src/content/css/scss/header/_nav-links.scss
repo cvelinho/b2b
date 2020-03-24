@@ -1,0 +1,108 @@
+﻿/*
+// .nav-links
+*/
+
+@import '../common/prefixer';
+@import '../variables';
+@import '../functions';
+
+
+// Nav links
+
+.nav-links {
+    height: 100%;
+}
+
+.nav-links__list {
+    @include flex-block();
+    /*height: inherit;
+    z-index: 10;*/
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links__item {
+    height: 100%;
+    position: relative;
+    line-height: 80px;
+
+    a {
+        @include flex-block();
+        @include align-items(center);
+        height: 100%;
+        font-size: $nav-links-item-default-font-size;
+        font-weight: $nav-links-item-font-weight;
+        color: $nav-links-item-default-font-color;
+        text-decoration: none;
+        text-transform: uppercase;
+        position: relative;
+
+        &.selected {
+            color: $body-font-color;
+
+            &:after {
+                content: "";
+                position: absolute;
+                bottom: 20px;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                width: 6px;
+                height: 6px;
+                border: 1px solid $accent-color;
+                @include border-radius(100%);
+            }
+        }
+
+        span {
+            background: $nav-links-item-default-bg;
+            box-shadow: $nav-links-item-default-shadow;
+        }
+
+        & > span {
+            @include flex-block();
+            @include align-items(center);
+            @include transition(background-color .2s);
+            padding: 0 20px;
+            text-align: center;
+        }
+    }
+
+    &:hover > a {
+        & > span {
+            @include transition-duration(0.1s);
+        }
+    }
+
+    &:hover {
+        .nav-sublist {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+@media (min-width: breakpoint(lg-start)) and (max-width: breakpoint(lg-end)) {
+    $item-padding: 10px;
+
+    .nav-links__item > a > span {
+        /*padding: 0 $item-padding;*/
+    }
+}
+
+.nav-sublist {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 80px;
+    min-width: 300px;
+    padding: $body-padding;
+    background-color: #fff;
+    border: 1px solid $border-color;
+    border-top: none;
+    @include transition(all .3s ease-in-out);
+    line-height: 40px;
+}

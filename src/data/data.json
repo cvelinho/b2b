@@ -1,0 +1,171 @@
+{
+  "Logo": [
+    {
+      "name": "e-KAT",
+      "mode": "buyer"
+    }
+  ],
+  "NavLinks": [
+    {
+      "title": "General search",
+      "url": "/search",
+      "sublist": []
+    },
+    {
+      "title": "Sent/Received documents",
+      "url": "/orders",
+      "sublist": [
+        {
+          "id":  0,
+          "title": "Orders",
+          "url":  "/orders"
+        },
+        {
+          "id": 1,
+          "title": "Wish list",
+          "url":  "/wishlist"
+        }
+      ]
+    },
+    {
+      "title": "Setings",
+      "url": "/options",
+      "sublist": [
+        {
+          "id": 0,
+          "title": "General settings",
+          "url": "/wishlist"
+        },
+        {
+          "id": 1,
+          "title": "User administration",
+          "url": "/wishlist"
+        },
+        {
+          "id": 2,
+          "title": "Buyer information",
+          "url": "/wishlist"
+        },
+        {
+          "id": 3,
+          "title": "Supplier information",
+          "url": "/wishlist"
+        },
+        {
+          "id": 4,
+          "title": "Terms of sale",
+          "url": "/wishlist"
+        },
+        {
+          "id": 5,
+          "title": "Favorite vehicles",
+          "url": "/wishlist"
+        },
+        {
+          "id": 6,
+          "title": "Promotions",
+          "url": "/wishlist"
+        }
+      ]
+    }
+  ],
+  "UserInformation": [
+    {
+      "firstName": "Marko",
+      "lastName": "Stjepanovic",
+      "userMode": "buyer"
+    }
+  ],
+  "HomeOfferArticles": [
+    {
+      "id": 1,
+      "title": "Mahle original",
+      "manufacturer": "Mahle original",
+      "partNumber": "029 AS 18668 000",
+      "genericArticle": "Odstojna podloska, kolenasto vratilo/radilica (Krivajni mehanizam)",
+      "imageUrl": "https://www.irishautoparts.ie/images/thumbs/0002432_oils-lubricants_600.jpeg",
+      "price": [
+        {
+          "newPrice": "150,00",
+          "oldPrice": "300,00"
+        }
+      ],
+      "currency": "RSD",
+      "brands": "MERCEDES-BENZ, MERCEDES-BENZ, SETRA"
+    },
+    {
+      "id": 2,
+      "title": "Mahle original",
+      "manufacturer": "Mahle original",
+      "partNumber": "029 AS 18668 000",
+      "genericArticle": "Odstojna podloska, kolenasto vratilo/radilica (Krivajni mehanizam)",
+      "imageUrl": "https://www.irishautoparts.ie/images/thumbs/0002432_oils-lubricants_600.jpeg",
+      "price": [
+        {
+          "newPrice": "150,00",
+          "oldPrice": "300,00"
+        }
+      ],
+      "currency": "RSD",
+      "brands": "MERCEDES-BENZ, MERCEDES-BENZ, SETRA"
+    },
+    {
+      "id": 3,
+      "title": "Mahle original",
+      "manufacturer": "Mahle original",
+      "partNumber": "029 AS 18668 000",
+      "genericArticle": "Odstojna podloska, kolenasto vratilo/radilica (Krivajni mehanizam)",
+      "imageUrl": "https://www.irishautoparts.ie/images/thumbs/0002432_oils-lubricants_600.jpeg",
+      "price": [
+        {
+          "newPrice": "150,00",
+          "oldPrice": "300,00"
+        }
+      ],
+      "currency": "RSD",
+      "brands": "MERCEDES-BENZ, MERCEDES-BENZ, SETRA"
+    }
+  ],
+  "MenuLinks": [
+    {
+      "title": "Home page",
+      "url": "/"
+    },
+    {
+      "title": "Orders",
+      "url": "/"
+    },
+    {
+      "title": "Wishlist",
+      "url": "/"
+    },
+    {
+      "title": "General settings",
+      "url": "/"
+    },
+    {
+      "title": "User administration",
+      "url": "/"
+    },
+    {
+      "title": "Buyer information",
+      "url": "/"
+    },
+    {
+      "title": "Supplier information",
+      "url": "/"
+    },
+    {
+      "title": "Terms of sale",
+      "url": "/"
+    },
+    {
+      "title": "Favorite vehicles",
+      "url": "/"
+    },
+    {
+      "title": "Promotions",
+      "url": "/"
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+﻿@import '../variables';
+
+@mixin search-combo-xl() {
+    .search-combo__label {
+        font-size: 22px;
+        padding: 0 10px 0 0;
+    }
+
+    .search-combo__input-wrapper {
+        .input-text {
+            height: 60px;
+            padding: 0 70px 0 10px;
+        }
+    }
+
+    .search-combo__button-group {
+        button {
+            width: 32px;
+            height: 32px;
+
+            svg {
+                width: 14px;
+            }
+        }
+    }
+}
+
+@mixin search-combo-lg() {
+    .search-combo__label {
+        font-size: 18px;
+        padding: 0 10px 0 0;
+    }
+
+    .search-combo__input-wrapper {
+        .input-text {
+            height: 40px;
+            padding: 0 70px 0 10px;
+        }
+    }
+
+    .search-combo__button-group {
+        button {
+            width: 32px;
+            height: 32px;
+
+            svg {
+                width: 14px;
+            }
+        }
+    }
+}
+
+@mixin search-combo-md() {
+    .search-combo__label {
+        font-size: 16px;
+        padding: 0 10px 0 0;
+    }
+
+    .search-combo__input-wrapper {
+        .input-text {
+            height: 40px;
+            padding: 0 70px 0 10px;
+        }
+    }
+
+    .search-combo__button-group {
+        button {
+            width: 30px;
+            height: 30px;
+
+            svg {
+                width: 12px;
+            }
+        }
+    }
+}
+
+@mixin search-combo-sm() {
+    .search-combo__label {
+        font-size: 14px;
+        padding: 0 10px 0 0;
+    }
+
+    .search-combo__input-wrapper {
+        .input-text {
+            height: 32px;
+            padding: 0 70px 0 10px;
+        }
+    }
+
+    .search-combo__button-group {
+        button {
+            width: 30px;
+            height: 30px;
+
+            svg {
+                width: 12px;
+            }
+        }
+    }
+}
+
+@mixin search-combo-xs() {
+    .search-combo__label {
+        font-size: 13px;
+        padding: 0 10px 0 0;
+    }
+
+    .search-combo__input-wrapper {
+        .input-text {
+            height: 30px;
+            padding: 0 70px 0 10px;
+        }
+    }
+
+    .search-combo__button-group {
+        button {
+            width: 22px;
+            height: 22px;
+
+            svg {
+                width: 12px;
+            }
+        }
+    }
+}

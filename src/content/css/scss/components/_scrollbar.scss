@@ -1,0 +1,25 @@
+﻿/*
+// .scrollbar
+*/
+
+@import '../common/prefixer';
+@import "../variables";
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $light-opposite-alt-color;
+}
+
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-track {
+    border: 5px solid transparent;
+    @include border-radius(9px);
+}
+
+::-webkit-scrollbar-track {
+    background-color: #fff;
+    height: 15px;
+}

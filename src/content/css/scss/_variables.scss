@@ -1,0 +1,392 @@
+﻿// ----------------------------------------
+// Table of Contents
+// ----------------------------------------
+// - direction
+// - colors
+
+
+
+// ----------------------------------------
+// -- direction
+// ----------------------------------------
+$direction:                 ltr default; // or rtl
+$both-directions:           true !default;
+
+$inline-start:              if($direction == ltr, left, right)       !default;
+$inline-end:                if($direction == ltr, right, left)       !default;
+$transform-direction:       if($direction == ltr, 1, -1)             !default;
+
+$margin-inline-start:       margin- + $inline-start                  !default;
+$margin-inline-end:         margin- + $inline-end                    !default;
+$padding-inline-start:      padding- + $inline-start                 !default;
+$padding-inline-end:        padding- + $inline-end                   !default;
+$inset-inline-start:        $inline-start                            !default;
+$inset-inline-end:          $inline-end                              !default;
+$border-inline-start:       border- + $inline-start                  !default;
+$border-inline-end:         border- + $inline-end                    !default;
+$border-start-start-radius: border-top- + $inline-start + -radius    !default;
+$border-start-end-radius:   border-top- + $inline-end + -radius      !default;
+$border-end-start-radius:   border-bottom- + $inline-start + -radius !default;
+$border-end-end-radius:     border-bottom- + $inline-end + -radius   !default;
+
+
+
+// ----------------------------------------
+// -- colors
+// ----------------------------------------
+    // light
+    $light-color:                   #f4f4f4;   // bg color
+    $light-opposite-color:          #121212;   // text color, heading
+    $light-opposite-muted-color:    #6d6d6d;   // 
+    $light-opposite-alt-color:      #6a6a6a;   // icon color
+    $light-divider-color:           #eaeaea;   // border color
+    // dark
+    $dark-color:                    $light-opposite-color;
+    $dark-opposite-color:           $light-color;
+    // accent
+    $accent-color:                  #e61d23;
+    $accent-opposite-color:         darken($accent-color, 20%); // $light-opposite-color
+    //links
+    $link-color:                    #e61d23;
+    $link-hover-color:              darken($link-color, 20%);
+    //valid
+    $valid-color:                   #339900;
+    $valid-opposite-color:          lighten($valid-color, 10%);
+    //invalid
+    $invalid-color:                 #f01919;
+    $invalid-opposite-color:        lighten($invalid-color, 10%);
+    //warning
+    $warning-color:                 #e9be0a;
+    $warning-opposite-color:        lighten($warning-color, 10%);
+
+
+
+// ----------------------------------------
+// -- helpers
+// ----------------------------------------
+    // Font Weight
+    $font-weight-thin:              100 !default;
+    $font-weight-extra-light:       200 !default;
+    $font-weight-light:             300 !default;
+    $font-weight-normal:            400 !default;
+    $font-weight-medium:            500 !default;
+    $font-weight-semi-bold:         600 !default;
+    $font-weight-bold:              700 !default;
+    $font-weight-extra-bold:        800 !default;
+    $font-weight-black:             900 !default;
+
+    // breakpoints
+    $breakpoints: (
+        xs-start: 0px,
+        xs-end:   575px,
+        sm-start: 576px,
+        sm-end:   767px,
+        md-start: 768px,
+        md-end:   991px,
+        lg-start: 992px,
+        lg-end:   1199px,
+        xl-start: 1200px
+    );
+
+    @mixin breakpoint($breakpoint, $logic: false) {
+      @if( $logic ) {
+        @media #{$logic} and (min-width: map-get($map: $breakpoints, $key: $breakpoint)) { @content; }
+      } @else {
+        @media (min-width: map-get($map: $breakpoints, $key: $breakpoint)) { @content; }
+      }
+    }
+
+
+// ----------------------------------------
+// -- body
+// ----------------------------------------
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600,900&display=swap');
+
+    $body-bg:                   $light-color;
+    $body-font-color:           $light-opposite-color;
+    $body-font-muted-color:     $light-opposite-muted-color;
+    $body-font-alt-color:       $light-opposite-alt-color;
+    $body-font-family:          'Montserrat', 'sans-serif';
+    $body-font-size:            12px;
+    $body-font-weight:          $font-weight-normal;
+    $body-line-height:          1.5;
+    $body-divider-color:        $light-divider-color;
+    $body-padding:              20px;
+
+    // ----------------------------------------
+    // -- border
+    // ----------------------------------------
+    $border-width:              1px;
+    $border-style:              solid;
+    $border-color:              $body-divider-color;
+    $border-radius:             2px;
+
+// ----------------------------------------
+// -- header
+// ----------------------------------------
+    $header-bg:                 #fff;
+    $header-font-color:         $body-font-color;
+    $header-font-muted-color:   $body-font-muted-color;
+    $header-height:             80px;
+    $header-padding:            20px;
+
+    // -- logo
+    $header-logo-color:                 $link-color;
+    $header-logo-color-opposite:        $light-opposite-color;
+    $header-logo-font-size:             36px;
+    $header-logo-font-size-sm:          10px;
+    $header-logo-line-height:           24px;
+    $header-logo-font-weight:           $font-weight-black;
+    $header-logo-font-weight-light:     $font-weight-semi-bold;
+    $header-logo-font-variant:          small-caps;
+    $header-logo-text-transform:        uppercase;
+
+
+    // ----------------------------------------
+    // -- .nav-panel, .mobile-header
+    // ----------------------------------------
+        $nav-panel-bg:              $accent-color ;
+        $nav-panel-shadow:          0 1px rgba(#000, .04), inset 0 -1px rgba(#000, .04);
+        $nav-panel-stuck-shadow:    0 1px rgba(#000, .04), inset 0 -1px rgba(#000, .04), 0 1px 20px rgba(#000, .15);
+        $nav-panel-font-color:      $accent-opposite-color;
+        $nav-panel-logo-color:      $nav-panel-font-color;
+        $nav-panel-height:          54px;
+        $nav-panel-padding:         6px;
+
+    // ----------------------------------------
+    // -- .nav-links
+    // ----------------------------------------
+        $nav-links-item-height:                 $nav-panel-height - $nav-panel-padding * 2;
+        $nav-links-item-border-radius:          $border-radius;
+        $nav-links-item-font-weight:            $font-weight-semi-bold;
+        // default
+        $nav-links-item-default-bg:             transparent;
+        $nav-links-item-default-shadow:         none;
+        $nav-links-item-default-font-color:     #bcbfc8;
+        $nav-links-item-default-font-size:      14px;
+        $nav-links-item-default-arrow-color:    rgba(#000, .3);
+        // hover
+        $nav-links-item-hover-bg:               rgba($light-color, .5);
+        $nav-links-item-hover-shadow:           $nav-links-item-default-shadow;
+        $nav-links-item-hover-font-color:       $nav-links-item-default-font-color;
+        $nav-links-item-hover-arrow-color:      $nav-links-item-default-arrow-color;
+
+    // ----------------------------------------
+    // -- .nav-icons
+    // ----------------------------------------
+        $nav-icons-color:                       $light-opposite-alt-color;
+        $nav-icons-color-hover:                 $accent-color;
+
+        
+    // ----------------------------------------
+    // -- .user-info
+    // ----------------------------------------
+        $user-info-font-size:                   12px;
+        $user-info-font-weight:                 600;
+        $user-info-circle-bg-color:             $light-color;
+        $user-info-circle-border-color:         $light-divider-color;
+    
+
+    // ----------------------------------------
+    // -- .indicator
+    // ----------------------------------------
+        $indicator-height:                      $nav-links-item-height;
+        $indicator-border-radius:               $nav-links-item-border-radius;
+        // default
+        $indicator-default-bg:                  $nav-links-item-default-bg;
+        $indicator-default-font-color:          $nav-links-item-default-shadow;
+        $indicator-default-counter-border:      $light-divider-color;
+        $indicator-default-counter-bg:          $light-color;
+        $indicator-default-counter-font-color:  $light-opposite-color;
+        $indicator-default-counter-font-size:   10px;
+        // hover
+        $indicator-hover-bg:                    $nav-links-item-hover-bg;
+        $indicator-hover-font-color:            $indicator-default-font-color;
+        $indicator-hover-counter-bg:            $indicator-default-counter-bg;
+        $indicator-hover-counter-font-color:    $indicator-default-counter-font-color;
+
+
+    // ----------------------------------------
+    // -- .dropcart
+    // ----------------------------------------
+        $dropcart-bg:                           #fff;
+        $dropcart-font-size:                    $body-font-size;
+        $dropcart-font-color:                   $light-opposite-color;
+        $dropcart-font-muted-color:             $light-opposite-muted-color;
+        $dropcart-divider-color:                $light-divider-color;
+        
+
+    // ----------------------------------------
+    // -- .language
+    // ----------------------------------------
+
+
+
+// ----------------------------------------
+// -- footer
+// ----------------------------------------
+    $footer-bg:                         #dedbd9;
+    $footer-font-color:                 $light-opposite-muted-color;
+    $footer-active-bg:                  #339900;
+    $footer-active-font-color:          #fff;
+    $footer-border-top:                 1px solid $light-divider-color;
+    $footer-copyright-border:           1px solid $light-divider-color;
+    $footer-height:                     60px;
+    $footer-padding:                    20px;
+
+
+// ----------------------------------------
+// -- search
+// ----------------------------------------
+    $search-height:                         40px;
+    $search-border-color:                   $light-divider-color;
+    $search-border-radius:                  $border-radius;
+    // input default
+    $search-input-default-bg:               $light-color;
+    $search-input-default-shadow:           0 0 0 2px #e5e5e5 inset;
+    $search-input-default-placeholder:      #999;
+    $search-input-default-font-color:       inherit;
+    $search-input-default-icon-color:       #bfbfbf;
+    $search-input-default-icon-hover-color: $accent-color;
+    // input hover
+    $search-input-hover-bg:                 $search-input-default-bg;
+    $search-input-hover-shadow:             0 0 0 2px #d4d4d4 inset;
+    $search-input-hover-placeholder:        $search-input-default-placeholder;
+    $search-input-hover-font-color:         $search-input-default-font-color;
+    $search-input-hover-icon-color:         $search-input-default-icon-color;
+    $search-input-hover-icon-hover-color:   $search-input-default-icon-hover-color;
+    // input hover
+    $search-input-focus-bg:                 $search-input-hover-bg;
+    $search-input-focus-shadow:             0 0 0 2px $accent-color inset;
+    $search-input-focus-placeholder:        $search-input-hover-placeholder;
+    $search-input-focus-font-color:         $search-input-hover-font-color;
+    $search-input-focus-icon-color:         $search-input-hover-icon-color;
+    $search-input-focus-icon-hover-color:   $search-input-hover-icon-hover-color;
+
+
+
+// ----------------------------------------
+// -- common
+// ----------------------------------------
+    // ----------------------------------------
+    // -- headers
+    // ----------------------------------------
+        $headers-font-family: null                 !default;
+        $headers-font-weight: $font-weight-bold    !default;
+        $headers-font-style:  null                 !default;
+        // h1
+        $h1-font-family:      $headers-font-family !default;
+        $h1-font-size:        36px                 !default;
+        $h1-font-weight:      $headers-font-weight !default;
+        $h1-font-style:       $headers-font-style  !default;
+        // h2
+        $h2-font-family:      $headers-font-family !default;
+        $h2-font-size:        32px                 !default;
+        $h2-font-weight:      $headers-font-weight !default;
+        $h2-font-style:       $headers-font-style  !default;
+        // h3
+        $h3-font-family:      $headers-font-family !default;
+        $h3-font-size:        28px                 !default;
+        $h3-font-weight:      $headers-font-weight !default;
+        $h3-font-style:       $headers-font-style  !default;
+        // h4
+        $h4-font-family:      $headers-font-family !default;
+        $h4-font-size:        24px                 !default;
+        $h4-font-weight:      $headers-font-weight !default;
+        $h4-font-style:       $headers-font-style  !default;
+        // h5
+        $h5-font-family:      $headers-font-family !default;
+        $h5-font-size:        20px                 !default;
+        $h5-font-weight:      $headers-font-weight !default;
+        $h5-font-style:       $headers-font-style  !default;
+        // h6
+        $h6-font-family:      $headers-font-family !default;
+        $h6-font-size:        16px                 !default;
+        $h6-font-weight:      $headers-font-weight !default;
+        $h6-font-style:       $headers-font-style  !default;
+
+
+
+// ----------------------------------------
+// -- components
+// ----------------------------------------
+
+    /*#region BUTTON*/
+    // ----------------------------------------
+    // -- .btn
+    // ----------------------------------------
+        // primary
+            // default
+            $btn-primary-bg-color:             $accent-color;
+            $btn-primary-font-color:           #fff;
+            $btn-primary-icon-color:           $btn-primary-font-color;
+            // hover
+            $btn-primary-hover-bg-color:       darken($btn-primary-bg-color, 10%);
+            $btn-primary-hover-font-color:     lighten($btn-primary-font-color, 10%);
+            $btn-primary-hover-icon-color:     $btn-primary-hover-font-color;
+            // active
+            $btn-primary-active-bg-color:      lighten($dark-color, 10%);
+            $btn-primary-active-font-color:    $btn-primary-hover-font-color;
+            $btn-primary-active-icon-color:    $btn-primary-hover-icon-color;
+        // secondary
+            // default
+            $btn-secondary-bg-color:           $valid-color;
+            $btn-secondary-font-color:         #fff;
+            $btn-secondary-icon-color:         $btn-secondary-font-color;
+            // hover
+            $btn-secondary-hover-bg-color:     darken($btn-secondary-bg-color, 10%);
+            $btn-secondary-hover-font-color:   lighten($btn-secondary-font-color, 10%);
+            $btn-secondary-hover-icon-color:   $btn-secondary-hover-font-color;
+            // active
+            $btn-secondary-active-bg-color:    lighten($dark-color, 10%);
+            $btn-secondary-active-font-color:  $btn-secondary-hover-font-color;
+            $btn-secondary-active-icon-color:  $btn-secondary-hover-icon-color;
+        // light
+            // default
+            $btn-light-bg-color:               transparent;
+            $btn-light-font-color:             $light-opposite-color;
+            $btn-light-icon-color:             #ccc;
+            // hover
+            $btn-light-hover-bg-color:         #f0f0f0;
+            $btn-light-hover-font-color:       $light-opposite-color;
+            $btn-light-hover-icon-color:       $btn-light-hover-font-color;
+            // active
+            $btn-light-active-bg-color:        #e5e5e5;
+            $btn-light-active-font-color:      $btn-light-hover-font-color;
+            $btn-light-active-icon-color:      $btn-light-hover-icon-color;
+    /*#endregion*/
+
+
+    /*#region MODAL*/
+   // ----------------------------------------
+   // -- .modal
+   // ----------------------------------------
+        $modal-bg-color:                    #fff;
+        $modal-border-color:                $border-color;            
+        $modal-border-radius:               $border-radius;
+        $modal-shadow:                      0 1px 20px rgba(#000, .15), 0 1px 3px rgba(#000, .15) !default;
+        $modal-font-size:                   $body-font-size;
+        $modal-font-family:                 $body-font-family;
+        $modal-font-weight:                 $font-weight-semi-bold;
+        $modal-header-height:               60px;
+        // modal close 
+        $modal-icon-close-color:            $dark-color;
+        $modal-icon-close-hover-color:      $light-opposite-alt-color;
+    /*#endregion*/
+
+    /*#region SIDEBAR*/
+    // ----------------------------------------
+    // -- .sidebar
+    // ----------------------------------------
+        $sidebar-bg-color:                    #fff;
+        $sidebar-border-color:                $border-color;            
+        $sidebar-border-radius:               $border-radius;
+        $sidebar-shadow:                      0 1px 20px rgba(#000, .15), 0 1px 3px rgba(#000, .15) !default;
+        $sidebar-font-size:                   $body-font-size;
+        $sidebar-font-family:                 $body-font-family;
+        $sidebar-font-weight:                 $font-weight-semi-bold;
+        $sidebar-header-height:               60px;
+        // sidebar close 
+        $sidebar-icon-close-color:            $dark-color;
+        $sidebar-icon-close-hover-color:      $light-opposite-alt-color;
+    /*#endregion*/

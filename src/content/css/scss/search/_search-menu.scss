@@ -1,0 +1,47 @@
+﻿/*
+// .search-menu
+*/
+
+@import '../common/prefixer';
+@import '../variables';
+
+
+// Search Menu
+
+.search-menu {
+    background-color: #000;
+    height: 100%;
+    width: 60px;
+
+    .search-menu__list {
+        .search-menu__item {
+            @include flex-block();
+            @include align-items(center);
+            @include justify-content(center);
+
+            height: 60px;
+            width: 60px;
+            color: #fff;
+
+            &.selected {
+                background-color: #fff;
+                color: $accent-color;
+            }
+
+            > span {
+                @include flex-block();
+                @include align-items(center);
+                @include justify-content(center);
+                
+                svg {
+                    height: 24px;
+                    width: 24px;
+                }
+
+                span {
+                    font-size: 0px;
+                }
+            }
+        }
+    }
+}
