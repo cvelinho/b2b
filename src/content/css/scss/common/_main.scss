@@ -1,0 +1,28 @@
+﻿/*
+// .ekat__main
+*/
+
+@import '../common/prefixer';
+@import '../variables';
+
+
+// Layout
+
+.ekat__main {
+    background-color: $body-bg;
+    min-height: 100%;
+    @include flex-block();
+    @include flex-direction(column);
+}
+
+.ekat__header {
+    @include flex-shrink(0);
+}
+
+.ekat__body {
+    @include flex-grow(1);
+}
+
+.ekat__footer {
+    @include flex-shrink(0);
+}

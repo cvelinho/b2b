@@ -1,0 +1,51 @@
+﻿/*
+// .ekat__header
+*/
+
+@import '../common/prefixer';
+@import '../variables';
+
+
+.ekat__header {
+    position: relative;
+    z-index: 2;
+    height: $header-height;
+    background-color: $header-bg;
+    border-bottom: 1px solid $light-divider-color;
+    color: $header-font-color;
+}
+
+// Header
+
+.header {
+    position: relative;
+    height: 100%;
+    z-index: 1;
+    @include flex-block();
+    @include align-items(center);
+    @include justify-content(center);
+    padding: $header-padding;
+    
+    .header__logo-panel {
+        @include flex-block();
+    }
+
+    .header__banner-panel {
+        @include flex-block();
+    }
+
+    .header__nav-panel {
+        margin-left: auto;
+    }
+}
+
+@media (min-width: breakpoint(xs-start)) and (max-width: breakpoint(sm-end)) {
+    .header {
+    }
+}
+
+@media (min-width: breakpoint(md-start)) {
+    .header {
+        @include flex-direction(row);
+    }
+}

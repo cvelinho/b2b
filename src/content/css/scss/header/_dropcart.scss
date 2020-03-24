@@ -1,0 +1,130 @@
+﻿/*
+// .dropcart
+*/
+
+@import '../common/prefixer';
+@import '../variables';
+
+.dropcart {
+    background: $dropcart-bg;
+    overflow: auto;
+    font-size: $dropcart-font-size;
+    font-weight: $font-weight-normal;
+    color: $dropcart-font-color;
+    padding: 0;
+}
+
+.dropcart__empty {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+// Product list
+
+.dropcart__products-list {
+    padding: 20px 16px;
+}
+
+// Product item
+
+.dropcart__product {
+    @include flex-block();
+
+    & + & {
+        margin-top: 20px;
+    }
+}
+
+.dropcart__product-image {
+    width: 70px;
+    @include flex-shrink(0);
+
+    img {
+        max-width: 100%;
+    }
+}
+
+.dropcart__product-info {
+    margin: 0;
+    @include flex-grow(1);
+    padding-right: 10px;
+    padding-left: 16px;
+}
+
+.dropcart__product-name {
+    margin-top: -2px;
+    line-height: 18px;
+    font-size: $body-font-size;
+
+    a {
+        color: $link-color;
+        @include transition(.15s);
+        text-decoration: none;
+
+        &:hover {
+            color: $link-hover-color;
+        }
+    }
+}
+
+.dropcart__product-options {
+    list-style: none;
+    margin: 3px 0 0;
+    padding: 0;
+    font-size: $body-font-size;
+    line-height: 16px;
+    color: $dropcart-font-muted-color;
+}
+
+.dropcart__product-meta {
+    margin-top: 5px;
+    font-size: 13px;
+}
+
+.dropcart__product-quantity {}
+
+.dropcart__product-price {
+    font-weight: $font-weight-semi-bold;
+}
+
+.dropcart__product-remove {
+    margin-top: -6px;
+    @include flex-shrink(0);
+    margin-right: -6px;
+}
+
+// Product totals
+
+.dropcart__totals {
+    border-top: 1px solid $dropcart-divider-color;
+    line-height: 24px;
+    padding: 16px 20px 0;
+
+    th {
+        padding-right: 16px;
+    }
+
+    td {
+        text-align: right;
+    }
+
+    table {
+        width: 100%;
+    }
+}
+
+// Product footer (for actions)
+
+.dropcart__buttons {
+    @include flex-block();
+    margin-top: 4px;
+    padding: 20px;
+
+    > * {
+        @include flex-grow(1);
+    }
+
+    > :first-child {
+        margin-right: 8px;
+    }
+}

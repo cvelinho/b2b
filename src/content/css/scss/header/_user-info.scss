@@ -1,0 +1,74 @@
+﻿/*
+// .user-info
+*/
+
+@import '../common/prefixer';
+@import '../variables';
+
+.user-info {
+    @include flex-block();
+    @include align-items(center);
+    margin: 0;
+    padding: 0 20px;
+    position: relative;
+
+    &:after,
+    &:before {
+        content: "";
+        position: absolute;
+        height: 40px;
+        border-left: 1px solid $light-divider-color;
+    }
+    &:after {
+        right: 0;
+    }
+    &:before {
+        left: 0;
+
+        @media (max-width: breakpoint(xl-start)) {
+            border-left: none;
+        }
+    }
+
+    .user-info__initial {
+        @include flex-block();
+        @include align-items(center);
+        @include justify-content(center);
+        @include flex(1 0 40px);
+        width: 40px;
+        height: 40px;
+        background-color: $user-info-circle-bg-color;
+        border: 1px solid $user-info-circle-border-color;
+        @include border-radius(50%);
+        font-weight: $user-info-font-weight;
+
+        span {
+            font-size: 0px;
+
+            &:first-letter {
+                font-size: $user-info-font-size;
+            }
+        }
+    }
+    .user-info__name-desc {
+        @include flex-block();
+        @include flex-direction(column);
+        padding-left: 10px;
+
+        span {
+            font-size: $user-info-font-size;
+
+            &:first-child {
+            }
+
+            &:last-child {
+                font-weight: $user-info-font-weight;
+                text-transform: uppercase;
+            }
+        }
+
+        @media (max-width: breakpoint(md-start)) {
+            display: none;
+        }
+    }
+}

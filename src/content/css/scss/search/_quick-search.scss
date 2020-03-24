@@ -1,0 +1,65 @@
+﻿/*
+// .quick-search
+*/
+
+@import '../common/prefixer';
+@import '../variables';
+
+
+// Quick Search
+
+.quick-search {
+    position: relative;
+}
+
+.quick-search__nav-bar {
+    @include flex-block();
+    @include align-items(center);
+    @include flex-direction(row);
+
+    .quick-search__action-button {
+        @include flex-block();
+        @include align-items(center);
+        @include justify-content(center);
+        width: 60px;
+        height: 60px;
+        color: $accent-color;
+        cursor: pointer;
+
+        /* svg icon */
+        .quick-search__button-icon {
+            fill: $accent-color;
+            width: 32px;
+        }
+
+        &:hover {
+            svg {
+                fill: $link-hover-color;
+            }
+        }
+    }
+}
+
+.quick-search__form {
+    @include flex-block();
+    @include align-items(center);
+    padding: 0 10px;
+
+    label {
+        @media (max-width: breakpoint(lg-start)) {
+            display: none;
+        }
+    }
+
+    div {
+
+    }
+
+    > button {
+        margin: 0 0 0 10px;
+    }
+}
+
+.quick-search__menu {
+
+}

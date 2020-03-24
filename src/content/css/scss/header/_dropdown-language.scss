@@ -1,0 +1,80 @@
+﻿/*
+// .dropdown-language
+*/
+
+@import '../common/prefixer';
+@import '../variables';
+@import '../functions';
+
+.dropdown-language {
+    position: relative;
+
+    .language-flag {
+        float: right;
+		width: 16px;
+		height: 11px;
+		margin: 2px 6px 0 0;
+		background-image: url(../../images/flags.png);
+		background-repeat: no-repeat;
+		cursor: pointer;
+    }
+
+    dl {
+        dt {
+            a {
+                span {
+                    
+                }
+            }
+        }
+
+        dd {
+            ul {
+                display: none;
+
+                li {
+                    a {
+                        span {
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// languages
+.de a span { background-position: 0 0 }
+.en a span { background-position: -16px 0 }
+.fr a span { background-position: -32px 0 }
+.it a span { background-position: -48px 0 }
+.sv a span { background-position: -64px 0 }
+.pt a span { background-position: -80px 0 }
+.ro a span { background-position: -96px 0 }
+.tr a span { background-position: -112px 0 }
+.hr a span { background-position: -128px 0 }
+.bg a span { background-position: -144px 0 }
+.sl a span { background-position: -160px 0 }
+.ba a span { background-position: -176px 0 }
+.es a span { background-position: -192px 0 }
+.nl a span { background-position: -208px 0 }
+.da a span { background-position: -224px 0 }
+.no a span { background-position: -240px 0 }
+.fi a span { background-position: -256px 0 }
+.hu a span { background-position: -272px 0 }
+.ru a span { background-position: -288px 0 }
+.sk a span { background-position: -304px 0 }
+.cs a span { background-position: -320px 0 }
+.zh a span { background-position: -336px 0 }
+.pl a span { background-position: -352px 0 }
+.el a span { background-position: -368px 0 }
+.lv a span { background-position: -384px 0 }
+.lt a span { background-position: -400px 0 }
+.et a span { background-position: -416px 0 }
+.sr a span { background-position: -432px 0 }
+.me a span { background-position: -448px 0 }
+.mk a span { background-position: -464px 0 }
+.sq a span { background-position: -480px 0 }
+.qc a span { background-position: -496px 0 }
+.co a span { background-position: -512px 0 }

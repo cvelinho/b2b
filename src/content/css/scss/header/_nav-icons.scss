@@ -1,0 +1,48 @@
+﻿/*
+// .nav-icons
+*/
+
+@import '../common/prefixer';
+@import '../variables';
+
+.nav-icons {
+    @include flex-block();
+    @include align-items(center);
+    margin: 0;
+    padding: 0;
+    
+    div {
+        @include flex-block();
+        @include align-items(center);
+        position: relative;
+        padding: 0 20px;
+
+        &:before {
+            content: "";
+            position: absolute;
+            height: 40px;
+            border-left: 1px solid $light-divider-color;
+            left: 0;
+        }
+
+        button {
+            background: none;
+            border: none;
+            outline: none;
+            cursor: pointer;
+
+            span {
+                svg {
+                    fill: $nav-icons-color;
+                    @include transition(fill .2s);
+                }
+            }
+
+            &:hover {
+                svg {
+                    fill: $nav-icons-color-hover;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,35 @@
+﻿/*
+// .menu-dots
+*/
+
+@import '../common/prefixer';
+@import '../variables';
+
+.menu {
+    .menu__button {
+        position: relative;
+        padding: 0;
+        cursor: pointer;
+        background: transparent;
+        border: none;
+        outline: none;
+    }
+
+    .menu__button-icon {
+        width: 24px;
+    }
+} 
+
+.menu-links {
+    padding: 20px;
+
+    .menu-links__list {
+        .menu-links__item {
+            a {
+                span {
+
+                }
+            }
+        }
+    }
+}

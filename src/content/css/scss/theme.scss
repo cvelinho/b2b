@@ -1,0 +1,60 @@
+﻿/* ---------------------------------------------------------------------------------
+Name: AutoKAT
+Description: Main SASS
+Version: 1.0
+--------------------------------------------------------------------------------- */
+
+
+
+/* ----------------------------------------
+// Common
+// ---------------------------------------- */
+@import "common/_animation";
+@import "common/_base";
+@import "common/_main";
+@import "common/_prefixer";
+@import "common/_reset";
+
+
+
+/* ----------------------------------------
+// Components
+// ---------------------------------------- */
+@import "components/_breadcrumb";
+@import "components/_buttons";
+@import "components/_modal";
+@import "components/_search-combo";
+@import "components/_scrollbar";
+@import "components/_sidebar";
+
+
+
+/* ----------------------------------------
+// Header
+// ---------------------------------------- */
+@import "header/_dropdown-language";
+@import "header/_dropcart";
+@import "header/_header";
+@import "header/_indicator-cart";
+@import "header/_logo-panel";
+@import "header/_menu";
+@import "header/_nav-icons";
+@import "header/_nav-links";
+@import "header/_nav-panel";
+@import "header/_user-info";
+
+
+
+/* ----------------------------------------
+// Footer
+// ---------------------------------------- */
+@import "footer/_footer";
+
+
+/* ----------------------------------------
+// Search
+// ---------------------------------------- */
+@import "search/_search";
+@import "search/_quick-search";
+@import "search/_search-menu";
+

@@ -1,0 +1,98 @@
+﻿/*
+// .search-combo
+*/
+
+@import '../common/prefixer';
+@import '../variables';
+@import '../mixins/_search-combo.scss';
+
+
+.search-combo {
+    position: relative;
+    @include flex-block();
+    @include align-items(center);
+    padding: 0 10px;
+
+    @media (min-width: breakpoint(lg-start)) {
+        @include search-combo-lg();
+    }
+
+    @media (min-width: breakpoint(md-start)) and (max-width: breakpoint(md-end)) {
+        @include search-combo-lg();
+    }
+    
+    @media (min-width: breakpoint(sm-start)) and (max-width: breakpoint(sm-end)) {
+        @include search-combo-lg();
+    }
+
+    @media (min-width: breakpoint(xs-start)) and (max-width: breakpoint(xs-end)) {
+        @include search-combo-lg();
+    }
+
+    .search-combo__label {
+        color: $body-font-color;
+        font-weight: $font-weight-semi-bold;
+        font-variant: small-caps;
+    }
+
+    .search-combo__input-wrapper {
+        position: relative;
+        @include flex-block();
+        
+        .input-text {
+            background-color: $search-input-default-bg;
+            border: 1px solid $search-border-color;
+        }
+
+        .search-combo__button-group {
+            position: absolute;
+            right: 4px;
+            top: 4px;
+            @include flex-block();
+            @include align-items(center);
+
+            > button {
+                @include flex-block();
+                @include justify-content(center);
+
+                &:hover {}
+
+                svg {
+
+                }
+
+                span {
+                    display: none;
+                }
+            }
+
+            .button-reset {
+                background-color: transparent;
+                border: none;
+                color: $light-opposite-alt-color;
+            }
+
+            .button-drop {
+                background-color: #fff;
+                border: 1px solid $border-color;
+                @include border-radius($border-radius);
+            }
+
+            /* svg icon */
+            .search__button-icon {
+                fill: $accent-color;
+                width: 32px;
+            }
+
+            &:hover {
+                svg {
+                    fill: $link-hover-color;
+                }
+            }
+        }
+    }
+
+    .search-combo__button {
+        margin: 0 0 0 10px;
+    }
+}

@@ -1,0 +1,135 @@
+﻿/*
+// .indicator
+*/
+
+@import '../common/prefixer';
+@import '../variables';
+@import '../functions';
+/*@import '../mixins/direction';*/
+
+
+$local-open-transition-duration: .2s;
+
+.indicator-cart {
+    @include flex-block();
+    color: $indicator-default-font-color;
+}
+
+.indicator__button {
+    @include flex-block();
+    @include align-items(center);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    color: inherit;
+    fill: currentColor;
+    text-decoration: none;
+
+    &:focus {
+        outline: none;
+    }
+    &:hover {
+        color: inherit;
+    }
+}
+
+.indicator__area {
+    @include flex-block();
+    @include align-items(center);
+    background: $indicator-default-bg;
+    @include transition(background-color .2s);
+    @include border-radius($indicator-border-radius);
+    height: $indicator-height;
+    padding: 0 12px;
+    width: 60px;
+}
+
+.indicator__value {
+    @include flex-block();
+    @include align-items(center);
+    @include justify-content(center);
+    height: 22px;
+    min-width: 22px;
+    font-size: $indicator-default-counter-font-size;
+    border: 1px solid $indicator-default-counter-border;
+    @include border-radius(1000px);
+    position: absolute;
+    top: -5px;
+    right: 10px;
+    background: $indicator-default-counter-bg;
+    color: $indicator-default-counter-font-color;
+    font-weight: $font-weight-bold;
+}
+
+.indicator__dropdown {
+    position: fixed;
+    top: 0;
+    right: 0;
+    visibility: hidden;
+    @include transform-origin(top);
+    @include transform(rotateX(60deg));
+    opacity: 0;
+    transition: transform $local-open-transition-duration,
+                opacity $local-open-transition-duration,
+                visibility 0s $local-open-transition-duration;
+    height: 100vh;
+}
+
+.indicator:hover {
+    .indicator__button {
+        color: $indicator-hover-font-color;
+    }
+    .indicator__area {
+        /*background: $indicator-hover-bg;*/
+        @include transition-duration(0.1s);
+    }
+    .indicator__value {
+        background: $indicator-hover-counter-bg;
+        color: $indicator-hover-counter-font-color;
+    }
+}
+
+.indicator--trigger--click.indicator--opened,
+.indicator--trigger--hover:hover {
+    .indicator__dropdown {
+        z-index: 9999;
+        transition-delay: 0s, 0s, 0s;
+        opacity: 1;
+        visibility: visible;
+        @include transform(rotateX(0deg));
+    }
+}
+
+.indicator__icon {
+    transition: transform .2s, opacity .2s;
+}
+.indicator__icon--open {
+    position: absolute;
+}
+.indicator--trigger--click:not(.indicator--opened) {
+    .indicator__icon--open {
+        @include transform(scale(0));
+        opacity: 0;
+    }
+}
+.indicator--trigger--click.indicator--opened {
+    .indicator__icon:not(.indicator__icon--open) {
+        @include transform(scale(0));
+        opacity: 0;
+    }
+}
+
+.indicator--mobile {
+    .indicator__area {
+        height: 36px;
+        padding: 0 10px;
+    }
+}
+
+
+@media (min-width: breakpoint(lg-start)) and (max-width: breakpoint(lg-end)) {
+    .indicator__area {
+        padding: 0 12px;
+    }
+}

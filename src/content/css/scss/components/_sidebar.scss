@@ -1,0 +1,86 @@
+﻿/*
+// .sidebar
+*/
+
+@import '../common/prefixer';
+@import '../variables';
+
+.sidebar {
+    @include flex-block();
+    @include flex-direction(column);
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    background-color: $sidebar-bg-color;
+    overflow-x: hidden;
+    padding: 0;
+    @include transition(0.8s cubic-bezier(0.175, 0.885, 0.32, 1.1) all);
+    @include box-shadow(0 6px 12px rgba(38, 50, 56, 0.1));
+}
+
+// Sidebar show
+
+.sidebar-show {
+    width: 300px;
+}
+
+// Sidebar hide
+
+.sidebar-fade {
+    right: 0;
+}
+
+.sidebar-header {
+    @include flex-block();
+    @include align-items(center);
+    @include justify-content(flex-end);
+    @include flex(0 0 auto);
+
+    padding: 0;
+    border-bottom: 0; 
+    height: $sidebar-header-height;
+    line-height: $sidebar-header-height;
+    
+    .sidebar-close {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        margin: 0;
+        width: 60px;
+        height: 60px;
+        font-size: 28px;
+        line-height: 1;
+        color: $sidebar-icon-close-color;
+        font-family: $sidebar-font-family;
+        font-weight: $sidebar-font-weight;
+
+        &:hover {
+            color: $sidebar-icon-close-hover-color;
+        }
+
+        span {
+            position: relative;
+
+            &:before {
+                content: "×";
+            }
+        }
+    }
+}
+
+// Sidebar body
+
+.sidebar-body {
+    @include flex(1 1 auto);
+}
+
+// Sidebar footer
+
+.sidebar-footer {
+    @include flex-block();
+    @include flex(0 0 auto);
+}
